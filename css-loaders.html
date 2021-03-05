@@ -47,6 +47,22 @@
 				transform: translateY(0);
 			}
 		}
+		@keyframes pendulize-left {
+			25% {
+				transform: translateX(-30px);
+			}
+			50% {
+				transform: translateX(0);
+			}
+		}
+		@keyframes pendulize-right {
+			25% {
+				transform: translateX(30px);
+			}
+			50% {
+				transform: translateX(0);
+			}
+		}
 
 		.wrapper {
 			display: flex;
@@ -98,24 +114,43 @@
 			position: relative;
 			height: 80px;
 		}
-		.loader-3 .bar {
+		.loader-3 .circle, .loader-4 .circle {
 			position: absolute;
 			background: rgba(255, 255, 255, 0.5);
 			height: 12px;
 			width: 12px;
 			border-radius: 50%;
+		}
+		.loader-3 .circle {
 			animation: rise 2s linear infinite;
 		}
-		.loader-3 .bar:nth-child(1) {
+		.loader-3 .circle:nth-child(1) {
 			animation-delay: 333ms;
 			left: -5px;
 		}
-		.loader-3 .bar:nth-child(2) {
+		.loader-3 .circle:nth-child(2) {
 			left: 13px;
 			animation-delay: 666ms;
 		}
-		.loader-3 .bar:nth-child(3) {
+		.loader-3 .circle:nth-child(3) {
 			left: -23px;
+		}
+
+		.loader-4 {
+			position: relative;
+			height: 80px;
+		}
+		.loader-4 .circle:first-child {
+			left: -5px;
+		}
+		.loader-4 .circle:nth-child(3) {
+			animation: pendulize-left 2s linear infinite;
+			left: -18px;
+		}
+		.loader-4 .circle:nth-child(2) {
+			animation: pendulize-right 2s linear infinite;
+			animation-delay: 1s;
+			left: 8px;
 		}
 	</style>
 </head>
@@ -133,9 +168,16 @@
 		</div>
 		<div>
 			<div class="loader-3">
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+		<div>
+			<div class="loader-4">
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
 			</div>
 		</div>
 	</div>
