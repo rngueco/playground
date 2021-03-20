@@ -7,21 +7,15 @@
 			box-sizing: border-box;
 		}
 		html, body {
-			background: linear-gradient(to bottom right, rgba(200, 100, 200, 1), rgba(100, 0, 100, 1));
+			background: linear-gradient(to bottom right, rgb(56, 55, 56), rgb(0, 0, 0));
+			background-repeat: no-repeat;
+			background-attachment: fixed;
 			margin: 0;
 			padding: 0;
-			height: 100vh;
+			height: 100%;
 			width: 100vw;
 		}
 
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-			100% {
-				transform: rotate(360deg);
-			}
-		}
 		@keyframes expand {
 			0% {
 				height: 5px;
@@ -75,23 +69,17 @@
 			text-align: center;
 		}
 
-		.loader-1 {
-			display: block;
-			height: 80px;
-			width: 80px;
-			border-radius: 50%;
-			border: 10px solid rgba(255, 255, 255, 0.4);
-			border-top: 10px solid lime;
-			animation: spin 1s linear infinite;
+		.loader-3 .circle, .loader-4 .circle, .loader-2 .bar {
+			background: rgba(255, 255, 255, 0.8);
 		}
 
 		.loader-2 {
 			position: relative;
 			height: 80px;
+			margin-bottom: 35px;
 		}
 		.loader-2 .bar {
 			position: absolute;
-			background: rgba(255, 255, 255, 0.5);
 			height: 5px;
 			width: 12px;
 			top: 35px;
@@ -116,7 +104,6 @@
 		}
 		.loader-3 .circle, .loader-4 .circle {
 			position: absolute;
-			background: rgba(255, 255, 255, 0.5);
 			height: 12px;
 			width: 12px;
 			border-radius: 50%;
@@ -156,9 +143,6 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div>
-			<div class="loader-1"></div>
-		</div>
 		<div>
 			<div class="loader-2">
 				<div class="bar"></div>
