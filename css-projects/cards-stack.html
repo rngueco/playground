@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stack of cards</title>
+	<style>
+		:root {
+			font-family: 'Lucida Console';
+		}
+		* {
+			box-sizing: border-box;
+		}
+		html, body {
+			margin: 0;
+			padding: 0;
+			background: black;
+		}
+
+		@keyframes nextcard {
+			0% {
+				transform: translateX(0);
+				z-index: 3;
+			}
+			1% {
+				transform: translateY(10px) scale(1.05);
+				z-index: 4;
+			}
+			3% {
+				transform: translateY(60px) scale(1.1);
+				z-index: 5;
+			}
+			8% {
+				transform: translateY(60px) scale(1.1);
+				z-index: 5;
+			}
+			10% {
+				transform: translateX(-320px) translateY(-30px) scale(0.85) rotate(-10deg);
+				z-index: 4;
+			}
+			11% {
+				transform: translateX(-320px) translateY(-30px) scale(0.85) rotate(-10deg);
+				z-index: 1;
+			}
+			13% {
+				transform: translateX(0) scale(0.8);
+				opacity: 1;
+				z-index: 0;
+			}
+			90% {
+				transform: translateX(0);
+				opacity: 1;
+				z-index: 0;
+			}
+			100% {
+				transform: translateX(0);
+				z-index: 2;
+			}
+		}
+
+		.stack {
+			position: relative;
+			height: 100vh;
+			width: 100vw;
+		}
+		.card {
+			position: absolute;
+			top: calc(50% - 200px);
+			left: calc(50% - 125px);
+			z-index: 3;
+
+			box-shadow: 1px 1px 15px 1px rgba(180, 180, 180, 1);
+			border-radius: 4px;
+			height: 400px;
+			width: 250px;
+			background: white;
+			padding: 15px;
+
+			-webkit-animation: nextcard 39s infinite;
+    		-moz-animation: nextcard 39s infinite;
+    		-ms-animation: nextcard 39s infinite;
+    		-o-animation: nextcard 39s infinite;
+			animation: nextcard 39s infinite;
+		}
+		.card-image {
+			height: 90%;
+			width: 100%;
+			border-radius: inherit;
+		}
+		.card-details {
+			width: 100%;
+			text-align: center;
+			text-transform: lowercase;
+		}
+
+		.stack > *:nth-child(12) { animation-delay: 3s; }
+		.stack > *:nth-child(11) { animation-delay: 6s; }
+		.stack > *:nth-child(10) { animation-delay: 9s; }
+		.stack > *:nth-child(9) { animation-delay: 12s; }
+		.stack > *:nth-child(8) { animation-delay: 15s; }
+		.stack > *:nth-child(7) { animation-delay: 18s; }
+		.stack > *:nth-child(6) { animation-delay: 21s; }
+		.stack > *:nth-child(5) { animation-delay: 24s; }
+		.stack > *:nth-child(4) { animation-delay: 27s; }
+		.stack > *:nth-child(3) { animation-delay: 30s; }
+		.stack > *:nth-child(2) { animation-delay: 33s; }
+		.stack > *:nth-child(1) { animation-delay: 36s; }
+	</style>
+</head>
+<body>
+	<div class="stack">
+		<div class="card">
+			<div class="card-image" style="background: pink;"></div>
+			<div class="card-details">
+				<p>Pink</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: yellow;"></div>
+			<div class="card-details">
+				<p>Yellow</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: green;"></div>
+			<div class="card-details">
+				<p>Green</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: red;"></div>
+			<div class="card-details">
+				<p>Red</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: orange;"></div>
+			<div class="card-details">
+				<p>Orange</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: blue;"></div>
+			<div class="card-details">
+				<p>Blue</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: violet;"></div>
+			<div class="card-details">
+				<p>Violet</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: grey;"></div>
+			<div class="card-details">
+				<p>Grey</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: turquoise;"></div>
+			<div class="card-details">
+				<p>Turquoise</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: lime;"></div>
+			<div class="card-details">
+				<p>Lime</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: purple;"></div>
+			<div class="card-details">
+				<p>Purple</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: salmon;"></div>
+			<div class="card-details">
+				<p>Salmon</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-image" style="background: navy;"></div>
+			<div class="card-details">
+				<p>Navy</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
