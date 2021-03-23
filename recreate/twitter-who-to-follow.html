@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Recreate Twitter: Who to follow
+        </title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            html, body {
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+            html {
+                display: table;
+            }
+            body {
+                display: table-cell;
+                vertical-align: middle;
+                width: 100%;
+            }
+
+            .card {
+                height: auto;
+                width: 400px;
+                margin: 0 auto;
+
+                border: 1px solid black;
+                border-radius: 24px;
+            }
+            .card-title {
+                margin: 0;
+                padding: 20px;
+            }
+            .divider {
+                display: block;
+                width: 100%;
+                border-top: 1px solid gray;
+            }
+            .profile {
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                padding: 5px 20px;
+
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                align-content: stretch;
+                justify-items: stretch;
+                justify-content: space-between;
+            }
+            .profile-pic {
+                display: block;
+                height: 60px;
+                width: 60px;
+                border: 1px solid gray;
+                border-radius: 50%;
+            }
+            .profile-info {
+                padding: 0 5px;
+                flex-grow: 1;
+            }
+            .display-name, .username {
+                display: block;
+            }
+            .show-more {
+                display: block;
+                margin: 15px 20px 20px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1 class="card-title">Who to follow</h1>
+            <span class="divider"></span>
+            <div class="profile">
+                <div class="profile-pic" style="background-color: pink;"></div>
+                <div class="profile-info">
+                    <span class="display-name">Riyana Gueco</span>
+                    <span class="username">@RiyanaGueco</span>
+                </div>
+                <button class="follow-button">Follow</button>
+            </div>
+            <span class="divider"></span>
+            <div class="profile">
+                <div class="profile-pic" style="background-color: palegoldenrod;"></div>
+                <div class="profile-info">
+                    <span class="display-name">My Display Name is Very Long</span>
+                    <span class="username">@Nice</span>
+                </div>
+                <button class="follow-button">Follow</button>
+            </div>
+            <span class="divider"></span>
+            <div class="profile">
+                <div class="profile-pic" style="background-color: powderblue;"></div>
+                <div class="profile-info">
+                    <span class="display-name">Short</span>
+                    <span class="username">@shortun</span>
+                </div>
+                <button class="follow-button">Follow</button>
+            </div>
+            <span class="divider"></span>
+            <a href="#" class="show-more">Show more</a>
+        </div>
+    </body>
+</html>
