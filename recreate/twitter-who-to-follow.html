@@ -5,6 +5,17 @@
             Recreate Twitter: Who to follow
         </title>
         <style>
+            :root {
+                --light-bg: white;
+                --light-primary: rgb(247, 249, 250);
+                --light-secondary: rgb(240, 242, 243);
+                --light-divider: rgb(235, 237, 238);
+
+                --dark-bg: black;
+                --dark-primary: #15181c;
+                --dark-secondary: #2f3336;
+                --dark-divider: #2f3336;
+            }
             * {
                 box-sizing: border-box;
             }
@@ -17,17 +28,31 @@
                 display: table;
             }
             body {
+                background-color: var(--background-color);
                 display: table-cell;
                 vertical-align: middle;
                 width: 100%;
             }
 
+            .light-theme {
+                --background-color: var(--light-bg);
+                --primary-bg: var(--light-primary);
+                --secondary-bg: var(--light-secondary);
+                --divider: var(--light-divider);
+            }
+            .dark-theme {
+                --background-color: var(--dark-bg);
+                --primary-bg: var(--dark-primary);
+                --secondary-bg: var(--dark-secondary);
+                --divider: var(--dark-divider);
+                color: white !important;
+            }
+
             .card {
+                background-color: var(--primary-bg);
                 height: auto;
                 width: 400px;
                 margin: 0 auto;
-
-                border: 1px solid black;
                 border-radius: 24px;
             }
             .card-title {
@@ -37,7 +62,7 @@
             .divider {
                 display: block;
                 width: 100%;
-                border-top: 1px solid gray;
+                border-top: 1px solid var(--secondary-bg);
             }
             .profile {
                 width: 100%;
@@ -51,6 +76,9 @@
                 align-content: stretch;
                 justify-items: stretch;
                 justify-content: space-between;
+            }
+            .profile:hover {
+                background-color: var(--secondary-bg);
             }
             .profile-pic {
                 display: block;
@@ -68,11 +96,26 @@
             }
             .show-more {
                 display: block;
-                margin: 15px 20px 20px 20px;
+                padding: 15px 20px 20px 20px;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .themer {
+                background-color: var(--primary-bg);
+                color: inherit;
+                outline: none;
+                border: none;
+                border-radius: 8px;
+                position: fixed;
+                right: 30px;
+                top: 30px;
+                padding: 8px 10px;
             }
         </style>
     </head>
-    <body>
+    <body class="light-theme">
+        <button onclick="toggleTheme()" class="themer">Dark</button>
         <div class="card">
             <h1 class="card-title">Who to follow</h1>
             <span class="divider"></span>
@@ -106,4 +149,18 @@
             <a href="#" class="show-more">Show more</a>
         </div>
     </body>
+    <script>
+        function toggleTheme() {
+            let body = document.querySelector('body');
+            let button = document.querySelector('.themer');
+
+            if (body.className == 'light-theme') {
+                body.className = 'dark-theme';
+                button.innerHTML = 'Light';
+            } else {
+                body.className = 'light-theme';
+                button.innerHTML = 'Dark';
+            }
+        }
+    </script>
 </html>
