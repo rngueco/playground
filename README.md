@@ -1,4 +1,4 @@
-# Riri's Playground
+# Playground
 A repository of all my personal mini-projects.
 
 ## Pens
