@@ -121,9 +121,6 @@
                 outline: none;
                 font-weight: 900;
             }
-            .unfollowed {
-                background-color: inherit;
-            }
             .followed {
                 background-color: var(--highlight-color);
                 color: white;
@@ -203,14 +200,9 @@
         }
 
         function followUnfollow(button) {
-            if (button.innerHTML == 'Follow') {
-                button.innerHTML = 'Unfollow';
-                button.className = 'follow-button followed';
-            }
-            else {
-                button.innerHTML = 'Follow';
-                button.className = 'follow-button unfollowed';
-            }
+            button.classList.toggle("followed");
+            if (button.innerText == 'Follow') button.innerText = 'Unfollow'
+            else button.innerText = 'Follow'
         }
     </script>
 </html>
