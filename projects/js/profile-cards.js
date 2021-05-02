@@ -13,3 +13,12 @@ class ProfileCard extends HTMLElement {
 }
 
 customElements.define('profile-card', ProfileCard);
+
+function expand(card) {
+    card.classList.toggle('expanded');
+
+    // If card is not expanded after toggle, add 'unexpanded' class
+    if (!card.classList.contains('expanded')) card.classList.toggle('unexpanded');
+    // Else if card is expanded after toggle and still contains 'unexpanded' class, remove 'unexpanded'
+    else if (card.classList.contains('expanded') && card.classList.contains('unexpanded')) card.classList.toggle('unexpanded');
+}
