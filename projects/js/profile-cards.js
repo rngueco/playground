@@ -22,3 +22,10 @@ function expand(card) {
     // Else if card is expanded after toggle and still contains 'unexpanded' class, remove 'unexpanded'
     else if (card.classList.contains('expanded') && card.classList.contains('unexpanded')) card.classList.toggle('unexpanded');
 }
+
+function toggleTheme() {
+    let docu = document.querySelector('html');
+
+    docu.classList.toggle('light-theme');
+    docu.classList.toggle('dark-theme');
+}
